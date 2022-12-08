@@ -25,3 +25,6 @@ contributors: <a href="https://www.flinders.edu.au/people/charlie.huveneers">Cha
 - <code>performance</code>
 - <code>sjPlot</code>
 - <code>lme4</code>
+
+<a href="https://globalecologyflinders.com"><img align="bottom-left" src="www/GEL Logo Kaurna New Transp.png" alt="GEL logo" width="100" style="margin-top: 20px"></a>
+<a href="https://twitter.com/SouthernSharkEG"><img align="bottom-left" src="www/SSEG.png" alt="SSEG logo" width="150" style="margin-top: 20px"></a>
