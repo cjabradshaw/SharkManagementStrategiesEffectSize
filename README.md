@@ -1,5 +1,5 @@
 # Shark management strategies power analyses
-<img align="right" src="www/sharkbite.png" alt="shark bite icon" width="150" style="margin-top: 20px">
+<img align="right" src="www/sharkbitenet.webp" alt="shark bite icon" width="150" style="margin-top: 20px">
 
 Power analyses to assess power to detect differences in the number of shark bites on humans with/without shark management strategies in place
 
