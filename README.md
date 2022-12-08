@@ -9,7 +9,7 @@ Prof <a href="https://globalecologyflinders.com/people/#DIRECTOR">Corey J. A. Br
 December 2022 <br>
 <a href=mailto:corey.bradshaw@flinders.edu.au>e-mail</a> <br>
 <br>
-contributors: <a href="https://www.researchgate.net/profile/Philip-Hulme-2">Charlie Huveneers</a>
+contributors: <a href="https://www.flinders.edu.au/people/charlie.huveneers">Charlie Huveneers</a>
 
 ## <a href="https://github.com/cjabradshaw/InvaCostDamMgmRatio/tree/main/scripts">Scripts</a>
 - <code>SMSpowerAnalysis.R</code>: main R code for analysis
