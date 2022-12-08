@@ -1,7 +1,7 @@
 # Shark management strategies power analyses
 <img align="right" src="www/sharkbitenet.webp" alt="shark bite icon" width="250" style="margin-top: 20px">
 
-Power analyses to assess power to detect differences in the number of shark bites on humans with/without shark management strategies in place
+Analyses to assess power to detect differences in the number of shark bites on humans with/without shark management strategies in place.
 
 <br>
 Prof <a href="https://globalecologyflinders.com/people/#DIRECTOR">Corey J. A. Bradshaw</a> <br>
