@@ -17,8 +17,8 @@ contributors: <a href="https://www.researchgate.net/profile/Philip-Hulme-2">Char
 - <code>r.squared.R</code>: source code for calculating goodness-of-fit for linear models (including mixed-effects models)
 
 ## <a href="https://github.com/cjabradshaw/InvaCostDamMgmRatio/tree/main/data">Data</a>
-- <em>beachmesh.csv</em>: per capita gross domestic product by country (source: <a href="https://data.worldbank.org/indicator/NY.GDP.PCAP.CD">World Bank</a>)
-- <em>sms.csv</em>: corruption perception index (source: <a href="https://www.transparency.org/en/cpi/2021">Transparency International</a>)
+- <em>beachmesh.csv</em>: data of shark bites at beaches with and without beach-mess protection
+- <em>sms.csv</em>: data describing shark bites across different beaches before and after shark-management strategies
 
 
 ## Required R packages
