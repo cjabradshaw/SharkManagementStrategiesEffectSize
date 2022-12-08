@@ -1,8 +1,8 @@
 # Shark management strategies power analyses
-<img align="right" src="www/sharkbitenet.webp" alt="shark bite icon" width="250" style="margin-top: 20px">
+<img align="right" src="www/sharkbitenet.webp" alt="shark bite icon" width="200" style="margin-top: 20px">
 
 Analyses to assess power to detect differences in the number of shark bites on humans with/without shark management strategies in place. See also the <a href="https://github.com/cjabradshaw/AustralianSharkIncidentDatabase">Australian Shark-Incident Database</a> (ASID).
-<img align="right" src="www/ASIDlogo3.png" alt="ASID logo" width="100" style="margin-top: 20px">
+<a href="https://github.com/cjabradshaw/AustralianSharkIncidentDatabase"><img align="right" src="www/ASIDlogo3.png" alt="ASID logo" width="100" style="margin-top: 20px"></a>
 
 <br>
 Prof <a href="https://globalecologyflinders.com/people/#DIRECTOR">Corey J. A. Bradshaw</a> <br>
