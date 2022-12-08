@@ -11,12 +11,12 @@ December 2022 <br>
 <br>
 contributors: <a href="https://www.flinders.edu.au/people/charlie.huveneers">Charlie Huveneers</a>
 
-## <a href="https://github.com/cjabradshaw/InvaCostDamMgmRatio/tree/main/scripts">Scripts</a>
+## <a href="https://github.com/cjabradshaw/SharkManagementStrategiesPower/tree/main/scripts">Scripts</a>
 - <code>SMSpowerAnalysis.R</code>: main R code for analysis
 - <code>new_lmer_AIC_tables3.R</code>: source code for information-theoretic algorithms
 - <code>r.squared.R</code>: source code for calculating goodness-of-fit for linear models (including mixed-effects models)
 
-## <a href="https://github.com/cjabradshaw/InvaCostDamMgmRatio/tree/main/data">Data</a>
+## <a href="https://github.com/cjabradshaw/SharkManagementStrategiesPower/tree/main/data">Data</a>
 - <em>beachmesh.csv</em>: data of shark bites at beaches with and without beach-mess protection
 - <em>sms.csv</em>: data describing shark bites across different beaches before and after shark-management strategies
 
