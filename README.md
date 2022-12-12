@@ -7,6 +7,7 @@ Analyses to assess power to detect differences in the number of shark bites on h
 See also the <a href="https://github.com/cjabradshaw/AustralianSharkIncidentDatabase">Australian Shark-Incident Database</a> (ASID).
 
 <br>
+<br>
 Prof <a href="https://globalecologyflinders.com/people/#DIRECTOR">Corey J. A. Bradshaw</a> <br>
 <a href="http://globalecologyflinders.com" target="_blank">Global Ecology</a> | <em><a href="https://globalecologyflinders.com/partuyarta-ngadluku-wardli-kuu/" target="_blank">Partuyarta Ngadluku Wardli Kuu</a></em>, <a href="http://flinders.edu.au" target="_blank">Flinders University</a>, Adelaide, Australia <br>
 December 2022 <br>
