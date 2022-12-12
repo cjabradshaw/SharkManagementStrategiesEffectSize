@@ -2,7 +2,7 @@
 <img align="right" src="www/sharkbitenet.png" alt="shark bite icon" width="300" style="margin-top: 20px">
 
 Analyses to assess power to detect differences in the number of shark bites on humans with/without shark management strategies in place. See also the <a href="https://github.com/cjabradshaw/AustralianSharkIncidentDatabase">Australian Shark-Incident Database</a> (ASID).
-<a href="https://github.com/cjabradshaw/AustralianSharkIncidentDatabase"><img align="right" src="www/ASIDlogo3.png" alt="ASID logo" width="100" style="margin-top: 20px"></a>
+<a href="https://github.com/cjabradshaw/AustralianSharkIncidentDatabase"><img align="left" src="www/ASIDlogo3.png" alt="ASID logo" width="100" style="margin-top: 20px"></a>
 
 <br>
 Prof <a href="https://globalecologyflinders.com/people/#DIRECTOR">Corey J. A. Bradshaw</a> <br>
