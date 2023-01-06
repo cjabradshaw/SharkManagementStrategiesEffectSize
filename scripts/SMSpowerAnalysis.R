@@ -125,13 +125,13 @@ fit <- glm(as.formula(mod.vec[i]),family=binomial(link="logit"), weights=bm.dat$
 check_model(fit)
 plot_model(fit, show.values=T, vline.color = "purple")
 
-hist(bm.dat$rawbites)
-hist(bm.dat$rawbites[bm.dat$Mesh == "No"])
-hist(bm.dat$rawbites[bm.dat$Mesh == "Yes"])
+hist(bm.dat$BiteBeach)
+hist(bm.dat$BiteBeach[bm.dat$Mesh == "No"])
+hist(bm.dat$BiteBeach[bm.dat$Mesh == "Yes"])
 
-obs.freq <- table(bm.dat$rawbites, bm.dat$Mesh)
+obs.freq <- table(bm.dat$BiteBeach, bm.dat$Mesh)
 obs.freq
-sum(bm.dat$rawbites)
+sum(bm.dat$BiteBeach)
 summ.chisq.obs <- chisq.test(obs.freq)
 obs.chi <- as.numeric(summ.chisq.obs$statistic)
 
