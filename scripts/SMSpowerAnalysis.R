@@ -296,7 +296,6 @@ plot(incr, corr.prob.md, type="l", xlab="additional shark bites over entire peri
 #######################################################################
 
 # read data for sms
-setwd("~/Documents/Papers/Fish/Sharks/beach mesh/data")
 sms.dat <- read.csv("sms.csv", header=T)
 head(sms.dat)
 
