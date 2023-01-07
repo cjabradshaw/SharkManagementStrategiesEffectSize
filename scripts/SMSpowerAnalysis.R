@@ -74,6 +74,9 @@ bm.dat$biteb <- as.integer(ifelse(bm.dat$BiteBeach > 0, 1, 0))
 bm.dat$meshfact <- as.factor(bm.dat$Mesh)
 table(bm.dat$biteb, bm.dat$perfact)
 
+# raw number of bites (51 beaches with mesh / 25 without)
+bm.dat$rawbites <- round(ifelse(bm.dat$Mesh == "Yes", 51*bm.dat$BiteBeach, 25*bm.dat$BiteBeach),1)
+
 
 ##############################
 # generalised linear models ##
@@ -125,13 +128,13 @@ fit <- glm(as.formula(mod.vec[i]),family=binomial(link="logit"), weights=bm.dat$
 check_model(fit)
 plot_model(fit, show.values=T, vline.color = "purple")
 
-hist(bm.dat$BiteBeach)
-hist(bm.dat$BiteBeach[bm.dat$Mesh == "No"])
-hist(bm.dat$BiteBeach[bm.dat$Mesh == "Yes"])
+hist(bm.dat$rawbites)
+hist(bm.dat$rawbites[bm.dat$Mesh == "No"])
+hist(bm.dat$rawbites[bm.dat$Mesh == "Yes"])
 
-obs.freq <- table(bm.dat$BiteBeach, bm.dat$Mesh)
+obs.freq <- table(bm.dat$rawbites, bm.dat$Mesh)
 obs.freq
-sum(bm.dat$BiteBeach)
+sum(bm.dat$rawbites)
 summ.chisq.obs <- chisq.test(obs.freq)
 obs.chi <- as.numeric(summ.chisq.obs$statistic)
 
@@ -146,7 +149,7 @@ lyes <- length(bm.dat$rawbites[bm.dat$Mesh == "Yes"])
 incr <- seq(0,50,1) # increase in the number of bites in non-meshed beaches
 iter <- 10000
 
-probMat <- matrix(data=NA, nrow=iter, ncol=length(incr))
+incr.probMat <- matrix(data=NA, nrow=iter, ncol=length(incr))
 
 for (c in 1:length(incr)) {
   
@@ -166,7 +169,7 @@ for (c in 1:length(incr)) {
     dat.it <- bm.dat
     dat.it$bitesUpd <- ifelse(dat.it$Mesh=="No", no.mesh.upd, dat.it$rawbites)
     it.freq <- table(as.integer(dat.it$bitesUpd), dat.it$Mesh)
-    probMat[i,c] <- as.numeric(chisq.test(it.freq, simulate.p.value=T, B=10000)$p.value)
+    incr.probMat[i,c] <- as.numeric(chisq.test(it.freq, simulate.p.value=T, B=10000)$p.value)
     
   } # end i loop
   
@@ -174,10 +177,10 @@ for (c in 1:length(incr)) {
   
 } # end c loop
 
-prob.md <- apply(probMat, MARGIN=2, median, na.rm=T)
-prob.lo <- apply(probMat, MARGIN=2, quantile, probs=0.025, na.rm=T)
-prob.up <- apply(probMat, MARGIN=2, quantile, probs=0.975, na.rm=T)
-plot(incr,prob.md, type="l", xlab="additional shark bites over entire period", ylab="Pr(Type I error meshed vs. not meshed)")
+incr.prob.md <- apply(incr.probMat, MARGIN=2, median, na.rm=T)
+incr.prob.lo <- apply(incr.probMat, MARGIN=2, quantile, probs=0.025, na.rm=T)
+incr.prob.up <- apply(incr.probMat, MARGIN=2, quantile, probs=0.975, na.rm=T)
+plot(incr, incr.prob.md, type="l", xlab="additional shark bites over entire period", ylab="Pr(Type I error meshed vs. not meshed)")
 
 
 ######################################################
@@ -190,7 +193,7 @@ lyes <- length(bm.dat$rawbites[bm.dat$Mesh == "Yes"])
 decr <- seq(0,8,1) # number of fewer bites required in meshed beaches
 iter <- 10000
 
-probMat <- matrix(data=NA, nrow=iter, ncol=length(decr))
+decr.probMat <- matrix(data=NA, nrow=iter, ncol=length(decr))
 
 for (c in 1:length(decr)) {
   
@@ -210,7 +213,7 @@ for (c in 1:length(decr)) {
     dat.it <- bm.dat
     dat.it$bitesUpd <- ifelse(dat.it$Mesh=="Yes", yes.mesh.upd, dat.it$rawbites)
     it.freq <- table(as.integer(dat.it$bitesUpd), dat.it$Mesh)
-    probMat[i,c] <- as.numeric(chisq.test(it.freq, simulate.p.value=T, B=10000)$p.value)
+    decr.probMat[i,c] <- as.numeric(chisq.test(it.freq, simulate.p.value=T, B=10000)$p.value)
     
   } # end i loop
   
@@ -218,10 +221,10 @@ for (c in 1:length(decr)) {
   
 } # end c loop
 
-prob.md <- apply(probMat, MARGIN=2, median, na.rm=T)
-prob.lo <- apply(probMat, MARGIN=2, quantile, probs=0.025, na.rm=T)
-prob.up <- apply(probMat, MARGIN=2, quantile, probs=0.975, na.rm=T)
-plot(decr,prob.md, type="l", xlab="reduction in shark bites over entire period", ylab="Pr(Type I error meshed vs. not meshed)")
+decr.prob.md <- apply(decr.probMat, MARGIN=2, median, na.rm=T)
+decr.prob.lo <- apply(decr.probMat, MARGIN=2, quantile, probs=0.025, na.rm=T)
+decr.prob.up <- apply(decr.probMat, MARGIN=2, quantile, probs=0.975, na.rm=T)
+plot(decr, decr.prob.md, type="l", xlab="reduction in shark bites over entire period", ylab="Pr(Type I error meshed vs. not meshed)")
 
 
 #######################################################################################
@@ -240,7 +243,7 @@ prop.yes <- 1 - prop.no
 incr <- seq(0,200,1) # number of additional bites overall (but following observed data structure and correcting for sampling bias)
 iter <- 1000
 
-probMat <- matrix(data=NA, nrow=iter, ncol=length(incr))
+corr.probMat <- matrix(data=NA, nrow=iter, ncol=length(incr))
 
 for (c in 1:length(incr)) {
   
@@ -273,7 +276,7 @@ for (c in 1:length(incr)) {
     bitesUpd.dat <- data.frame(bm.dat$Mesh, c(yes.mesh.upd, no.mesh.upd))
     colnames(bitesUpd.dat) <- c("Mesh","bitesUpd")
     it.freq <- table(bitesUpd.dat$bitesUpd, bitesUpd.dat$Mesh)
-    probMat[i,c] <- as.numeric(chisq.test(it.freq, simulate.p.value=T, B=10000)$p.value)
+    corr.probMat[i,c] <- as.numeric(chisq.test(it.freq, simulate.p.value=T, B=10000)$p.value)
     
   } # end i loop
   
@@ -281,10 +284,10 @@ for (c in 1:length(incr)) {
   
 } # end c loop
 
-prob.md <- apply(probMat, MARGIN=2, median, na.rm=T)
-prob.lo <- apply(probMat, MARGIN=2, quantile, probs=0.025, na.rm=T)
-prob.up <- apply(probMat, MARGIN=2, quantile, probs=0.975, na.rm=T)
-plot(incr,prob.md, type="l", xlab="additional shark bites over entire period", ylab="Pr(Type I error meshed vs. not meshed)")
+corr.prob.md <- apply(corr.probMat, MARGIN=2, median, na.rm=T)
+corr.prob.lo <- apply(corr.probMat, MARGIN=2, quantile, probs=0.025, na.rm=T)
+corr.prob.up <- apply(corr.probMat, MARGIN=2, quantile, probs=0.975, na.rm=T)
+plot(incr, corr.prob.md, type="l", xlab="additional shark bites over entire period", ylab="Pr(Type I error meshed vs. not meshed)")
 
 
 
