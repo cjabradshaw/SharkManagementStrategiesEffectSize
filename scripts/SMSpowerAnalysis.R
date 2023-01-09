@@ -491,3 +491,81 @@ lines(red.vec, log10(ER12.up), lty=2, col="red")
 abline(h=log10(2), lty=2, col="blue")
 
 
+#######################################################
+# increase loop (increase in bites in non-sms areas) ##
+#######################################################
+
+inc.vec <- seq(1,30,1) # increase of bites vector
+post.nosms.upd <- post.nosms
+values.vec <- as.numeric(attr(table(post.nosms$bites), "names"))
+
+iter4 <- 1000
+itdiv4 <- iter4/10
+
+ER12.mat <- ER15.mat <- matrix(data=NA, nrow=iter4, ncol=length(inc.vec))
+
+for (r in 1:length(inc.vec)) {
+  
+  for (g in 1:iter4) {
+    # reset
+    post.nosms.upd <- post.nosms
+    
+    # number of entries to modify
+      ran.entries <- sample(1:dim(post.nosms)[1], sample(1:inc.vec[r],1), replace=F)
+
+    inc <- inc.vec[r]
+    for (e in 1:length(ran.entries)) {
+      inc.it <- sample(values.vec,1)
+      post.nosms.upd[ran.entries[e], ]$bites <- post.nosms.upd[ran.entries[e],]$bites + inc.it
+      inc <- inc.vec[r] - inc.it
+    } # end e loop
+    
+    # update data.frame
+    dat.it <- rbind(pre.nosms, post.nosms.upd, pre.sms, post.sms)
+    
+    # do GLMM
+    LL.vec <- AICc.vec <- BIC.vec <- k.vec <- Rm <- Rc <- rep(0,Modnum)
+    AICc.vec <- rep(0,Modnum)
+    mod.list <- list()
+    
+    for(i in 1:Modnum) {
+      fit <- glmer(as.formula(mod.vec[i]), family=poisson(link="log"), data=dat.it, na.action=na.omit)
+      assign(paste("fit",i,sep=""), fit)
+      mod.list[[i]] <- fit
+      AICc.vec[i] <- r.squared(fit)$AIC
+      
+    }
+    dAICc <- delta.IC(AICc.vec)
+    wAICc <- weight.IC(dAICc)
+    
+    sumtable <- data.frame(mod.num,AICc.vec,round(dAICc,3),round(wAICc,4))
+    colnames(sumtable) <- c("model","AICc","dAICc","wAICc")
+    row.names(sumtable) <- as.character(mod.vec)
+    summary.table <- sumtable[order(sumtable[,4],decreasing=T),]
+    ER12.mat[g,r] <- summary.table[which(summary.table$model == 1),]$wAICc / summary.table[which(summary.table$model == 2),]$wAICc
+    ER15.mat[g,r] <- summary.table[which(summary.table$model == 1),]$wAICc / summary.table[which(summary.table$model == 5),]$wAICc
+    
+    if (g %% itdiv4==0) print(g) # print every iter/10 g
+    
+  }  # end g loop
+  
+  print("###########################")
+  print(paste("increase post-nosms bites by ", inc.vec[r], sep=""))
+  print("###########################")
+  
+} # end r loop
+
+ER12.md <- apply(ER12.mat, MARGIN=2, median, na.rm=T)
+ER12.lo <- apply(ER12.mat, MARGIN=2, quantile, probs=0.1, na.rm=T)
+ER12.up <- apply(ER12.mat, MARGIN=2, quantile, probs=0.9, na.rm=T)
+
+ER15.md <- apply(ER15.mat, MARGIN=2, median, na.rm=T)
+ER15.lo <- apply(ER15.mat, MARGIN=2, quantile, probs=0.1, na.rm=T)
+ER15.up <- apply(ER15.mat, MARGIN=2, quantile, probs=0.9, na.rm=T)
+
+plot(inc.vec, log10(ER12.md), type="l", xlab="increase # bites post-sms", ylab="log10 ER (sat:no.int)",
+     ylim=c(min(log10(ER12.lo), na.rm=T),max(log10(ER12.up[is.infinite(ER12.up) == F]), na.rm=T)))
+lines(inc.vec, log10(ER12.lo), lty=2, col="red")
+lines(inc.vec, log10(ER12.up), lty=2, col="red")
+abline(h=log10(2), lty=2, col="blue")
+
