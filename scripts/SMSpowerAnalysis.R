@@ -495,7 +495,7 @@ abline(h=log10(2), lty=2, col="blue")
 # increase loop (increase in bites in non-sms areas) ##
 #######################################################
 
-inc.vec <- seq(1,30,1) # increase of bites vector
+inc.vec <- seq(1,20,1) # increase of bites vector
 post.nosms.upd <- post.nosms
 values.vec <- as.numeric(attr(table(post.nosms$bites), "names"))
 
