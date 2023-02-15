@@ -10,8 +10,6 @@
 
 rm(list = ls())
 
-library(performance)
-library(sjPlot)
 library(lme4)
 library(performance)
 library(sjPlot)
