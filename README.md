@@ -1,4 +1,4 @@
-# Shark-management strategies power analyses
+# Shark-management strategies effect-size analyses
 <img align="right" src="www/sharkbitenet.png" alt="shark bite icon" width="280" style="margin-top: 20px">
 
 Analyses to assess probability of detecting differences in the number of shark bites on humans with/without shark management strategies in place.
