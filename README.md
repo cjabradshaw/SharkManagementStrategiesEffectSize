@@ -1,4 +1,5 @@
 # Shark-management strategies effect-size analyses
+<a href="https://doi.org/10.5281/zenodo.10043996"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.10043996.svg" alt="DOI"></a>
 <img align="right" src="www/sharkbitenet.png" alt="shark bite icon" width="280" style="margin-top: 20px">
 
 Analyses to assess probability of detecting differences in the number of shark bites on humans with/without shark management strategies in place.
