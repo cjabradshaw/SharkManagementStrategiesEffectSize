@@ -18,10 +18,10 @@ July 2023/updated October 2023 <br>
 contributors: <a href="https://www.flinders.edu.au/people/charlie.huveneers">Charlie Huveneers</a>
 
 ## Paper
-Huveneers, C, C Blount, CJA Bradshaw, PA Butcher, MP Lincoln Smith, WG MacBeth, DP McPhee, N Moltschaniwskyj, VM Peddemors, M Green In review. Shifts in the incidence of shark bites and efficacy of beach-focussed mitigation in Australia. <em>Marine Pollution Bulletin</em>
+Huveneers, C, C Blount, CJA Bradshaw, PA Butcher, MP Lincoln Smith, WG MacBeth, DP McPhee, N Moltschaniwskyj, VM Peddemors, M Green. 2023. Shifts in the incidence of shark bites and efficacy of beach-focussed mitigation in Australia. <em>Marine Pollution Bulletin</em> doi:<a href="https://doi.org/10.1016/j.marpolbul.2023.115855">10.1016/j.marpolbul.2023.115855</a>
 
 ### Abstract
-Shark-human interactions are some of the most pervasive human-wildlife conflicts, and their frequencies are increasing globally. New South Wales (Australia) was the first to implement a broad-scale program of shark-bite mitigation in 1937 using shark nets, which expanded in the late 2010s to include non-lethal measures. Using 196 unprovoked shark-human interactions recorded in New South Wales since 1900, we show that bites shifted from being predominantly on swimmers to 79% on surfers by the 1980s and increased 2–4-fold. We could not detect differences in the interaction rate at netted versus non-netted beaches since the 2000s, partly because of low incidence and high variance. Although shark-human interactions continued to occur at beaches with tagged-shark listening stations, there were no interactions while SMART drumlines and/or drones were deployed. Our effect-size analyses show that a small increase in the difference between mitigated and non-mitigated beaches could indicate reductions in shark-human interactions. Area-based protection alone is insufficient to reduce shark-human interactions, so we propose a new, globally transferable approach to minimise risk of shark bite more effectively.
+Shark-human interactions are some of the most pervasive human-wildlife conflicts, and their frequencies are increasing globally. New South Wales (Australia) was the first to implement a broad-scale program of shark-bite mitigation in 1937 using shark nets, which expanded in the late 2010s to include non-lethal measures. Using 196 unprovoked shark-human interactions recorded in New South Wales since 1900, we show that bites shifted from being predominantly on swimmers to 79 % on surfers by the 1980s and increased 2–4-fold. We could not detect differences in the interaction rate at netted versus non-netted beaches since the 2000s, partly because of low incidence and high variance. Although shark-human interactions continued to occur at beaches with tagged-shark listening stations, there were no interactions while SMART drumlines and/or drones were deployed. Our effectsize analyses show that a small increase in the difference between mitigated and non-mitigated beaches could indicate reductions in shark-human interactions. Area-based protection alone is insufficient to reduce shark-human interactions, so we propose a new, globally transferable approach to minimise risk of shark bite more effectively.
 
 ## <a href="https://github.com/cjabradshaw/SharkManagementStrategiesPower/tree/main/scripts">Scripts</a>
 - <code>SMSeffectSizeAnalysis.R</code>: main R code for analysis
@@ -32,7 +32,6 @@ Shark-human interactions are some of the most pervasive human-wildlife conflicts
 - <em>beachmesh.csv</em>: data of shark bites at beaches with and without beach-mess protection (all interactions)
 - <em>beachmeshonlybites.csv</em>: data of shark bites at beaches with and without beach-mess protection (bites only)
 - <em>sms.csv</em>: data describing shark bites across different beaches before and after shark-management strategies
-
 
 ## Required R packages
 - <code>performance</code>
