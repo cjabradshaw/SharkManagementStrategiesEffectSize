@@ -1,4 +1,4 @@
-![image](https://github.com/cjabradshaw/SharkManagementStrategiesEffectSize/assets/26937238/8078973f-5873-415b-8e83-80ae782c00e8)# Shark-management strategies effect-size analyses
+# Shark-management strategies effect-size analyses
 <a href="https://doi.org/10.5281/zenodo.10043996"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.10043996.svg" alt="DOI"></a>
 <img align="right" src="www/sharkbitenet.png" alt="shark bite icon" width="280" style="margin-top: 20px">
 
