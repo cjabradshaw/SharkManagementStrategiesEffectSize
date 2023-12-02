@@ -18,7 +18,7 @@ July 2023/updated October 2023 <br>
 contributors: <a href="https://www.flinders.edu.au/people/charlie.huveneers">Charlie Huveneers</a>
 
 ## Paper
-Huveneers, C, C Blount, CJA Bradshaw, PA Butcher, MP Lincoln Smith, WG MacBeth, DP McPhee, N Moltschaniwskyj, VM Peddemors, M Green. 2023. Shifts in the incidence of shark bites and efficacy of beach-focussed mitigation in Australia. <em>Marine Pollution Bulletin</em> 198:115855.
+<a href="https://www.flinders.edu.au/people/charlie.huveneers">Huveneers, C</a>, <a href="https://au.linkedin.com/in/craig-blount-010907b1">C Blount</a>, <a href="https://globalecologyflinders.com/people/#DIRECTOR">CJA Bradshaw</a>, <a href="https://www.linkedin.com/in/paul-butcher-6538a186/">PA Butcher</a>, <a href="https://www.linkedin.com/in/marcus-lincoln-smith-b0678758/">MP Lincoln Smith</a>, <a href="https://www.linkedin.com/in/will-macbeth-44770286/">WG MacBeth</a>, <a href="https://bond.edu.au/profile/daryl-mcphee">DP McPhee</a>, <a href="https://www.newcastle.edu.au/profile/natalie-moltschaniwskyj">N Moltschaniwskyj</a>, <a href="https://www.linkedin.com/in/vic-peddemors-2561b5a2">VM Peddemors</a>, <a href="https://www.scopus.com/authid/detail.uri?authorId=57680233300">M Green</a>. 2023. Shifts in the incidence of shark bites and efficacy of beach-focussed mitigation in Australia. <em>Marine Pollution Bulletin</em> 198:115855.
 doi:<a href="https://doi.org/10.1016/j.marpolbul.2023.115855">10.1016/j.marpolbul.2023.115855</a>
 
 ### Abstract
